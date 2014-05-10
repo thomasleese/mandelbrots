@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Mandelbrot Viewer</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+        <link rel="icon" href="/static/images/icon.png" type="image/png" />
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+
+        <style type="text/css">
+            #map {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="map"></div>
+
+        <script>
+            var map = L.map("map").setView([0, 0], 0);
+            L.tileLayer("https://s3-eu-west-1.amazonaws.com/mandlebrotviewer/tiles/0/{z}/{x}/{y}.png", {
+                attribution: "&copy; Seb Aebischer",
+                maxZoom: 5,
+                continousWorld: true,
+                noWrap: true,
+            }).addTo(map);
+        </script>
+    </body>
+
+</html>
