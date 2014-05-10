@@ -31,7 +31,7 @@
 
         <script>
             var createLayer = function(layer) {
-                var url = "https://s3-eu-west-1.amazonaws.com/mandlebrotviewer/tiles/" + layer + "/{z}/{x}/{y}.png";
+                var url = "https://s3-eu-west-1.amazonaws.com/mandelbrotviewer/tiles/" + layer + "/{z}/{x}/{y}.png";
                 return L.tileLayer(url, {
                     attribution: "&copy; Seb Aebischer",
                     maxZoom: 6,
@@ -40,17 +40,18 @@
                 });
             }
 
-            var layers = [createLayer("0"), createLayer("1")];
+            var layers = {
+                "Colourful": createLayer("colourful"),
+                "Greyscale": createLayer("greyscale")
+            };
+
             var map = L.map("map", {
                 center: [0, 0],
                 zoom: 0,
-                layers: [layers[0]],
+                layers: [layers["Colourful"]],
             });
 
-            /*L.control.layers({
-                "Colour Scheme 0": layers[0],
-                "Colour Scheme 1": layers[1],
-            }, null).addTo(map);*/
+            L.control.layers(layers, null).addTo(map);
         </script>
     </body>
 
