@@ -14,3 +14,8 @@
        -moz-box-sizing: content-box;
             box-sizing: content-box;
 }
+
+/* layers don't represent colour schemes very well */
+.leaflet-control-layers-toggle {
+    background-image: url("../images/colours.png");
+}
