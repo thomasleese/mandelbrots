@@ -10,15 +10,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
-        <link rel="stylesheet" href="//kartena.github.io/Leaflet.zoomslider/lib/Leaflet.zoomslider/src/L.Control.Zoomslider.css" />
+        <link rel="stylesheet" href="/static/styles/L.Control.Zoomslider.css" />
         <link rel="stylesheet" href="/static/styles/reset.css" type="text/css" />
         <link rel="stylesheet" href="/static/styles/all.css" type="text/css" />
 
         <link rel="icon" href="/static/images/icon.png" type="image/png" />
 
         <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-        <script src="//kartena.github.io/Leaflet.zoomslider/lib/Leaflet.zoomslider/src/L.Control.Zoomslider.js"></script>
-        <script src="//mlevans.github.io/leaflet-hash/javascripts/leaflet-hash.js"></script>
+        <script src="/static/scripts/L.Control.Zoomslider.js"></script>
+        <script src="/static/scripts/L.Hash.js"></script>
     </head>
 
     <body>
@@ -46,12 +46,13 @@
                 center: [0, 0],
                 zoom: 0,
                 layers: [layers["Colourful"]],
+                zoomControl: false,
                 zoomsliderControl: true,
             });
 
             L.control.layers(layers, null).addTo(map);
 
-            var hash = new L.Hash(map);
+            L.hash(map);
         </script>
     </body>
 
