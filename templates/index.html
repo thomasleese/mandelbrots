@@ -10,8 +10,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+        <link rel="stylesheet" href="//kartena.github.io/Leaflet.zoomslider/lib/Leaflet.zoomslider/src/L.Control.Zoomslider.css" />
         <link rel="icon" href="/static/images/icon.png" type="image/png" />
+
         <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+        <script src="//kartena.github.io/Leaflet.zoomslider/lib/Leaflet.zoomslider/src/L.Control.Zoomslider.js"></script>
 
         <style type="text/css">
             #map {
@@ -51,6 +54,7 @@
                 center: [0, 0],
                 zoom: 0,
                 layers: [layers["Colourful"]],
+                zoomsliderControl: true,
             });
 
             L.control.layers(layers, null).addTo(map);
